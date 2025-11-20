@@ -14,9 +14,6 @@ function WeatherApp({ isDark, setIsDark }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // ---------------------------
-  // DEFAULT CITY = HYDERABAD
-  // ---------------------------
   useEffect(() => {
     fetchWeather("Hyderabad");
   }, []);
@@ -39,8 +36,8 @@ function WeatherApp({ isDark, setIsDark }) {
         `https://api.openweathermap.org/data/2.5/forecast?lat=${weatherData.coord.lat}&lon=${weatherData.coord.lon}&appid=${API_KEY}&units=metric`
       );
       const forecastData = await forecastRes.json();
+      document.title = `${weatherData.name} : ${Math.round(weatherData.main.temp)}°C`;
       
-
       const chartData = forecastData.list.slice(0, 8).map((item) => ({
         time: new Date(item.dt * 1000).getHours() + ":00",
         temp: Math.round(item.main.temp),
