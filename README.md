@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# WeatherView Pro ⛅ | Next-Gen Production Weather & Radar App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![WeatherView Banner](public/screenshot.png)
 
-## Available Scripts
+WeatherView Pro is a high-performance, feature-rich weather forecasting progressive web application (PWA) inspired by Apple Weather, Windy, and Carrot Weather. Built with modern frontend web standards: Vite, React 19, TypeScript, Tailwind CSS v4, TanStack Query, Framer Motion, Leaflet, and Open-Meteo API.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🌤️ **Live Weather & Minutely Rain Radar**: Current temperature, feels like, humidity, wind compass, surface pressure, UV index level, dew point, sunrise & sunset times.
+- ☔ **Glanceable Precipitation Indicator**: Human-friendly rain status banners (*"Rain starting in 25 min"*, *"Heavy rain expected at 4:00 PM (85% chance)"*).
+- 🕒 **Hourly Forecast (24 Hours)**: Touch/mouse horizontal scrollable timeline with temperature curves, weather condition icons, and precipitation probability.
+- 📅 **7-Day Daily Forecast**: Apple Weather-style high/low temperature range visualizer bars and daily condition summaries.
+- 🍃 **Air Quality Index (AQI) & Pollutants**: US EPA & European CAQI standards with live pollutant breakdown grid (**PM2.5, PM10, O₃, NO₂, SO₂, CO**) and health advisories.
+- 🗺️ **Interactive Precipitation Radar Map**: Embedded Leaflet map with **RainViewer API** dynamic tile overlays, timeline scrubber, play/pause controls, and radar/cloud layer toggles.
+- ☀️ **Sun Arc & Daylight Progress**: Visual semi-circle arc tracking sun elevation and remaining daylight hours.
+- 🔍 **Global City Search & Geolocation**: Instant debounced city autocomplete search powered by Open-Meteo Geocoding API, plus one-click browser location detection.
+- 🔖 **Saved Locations Drawer**: Manage multi-city bookmarks and mark your primary "Home" location.
+- 🎨 **Dynamic Atmospheric Themes**: Gradient canvas that automatically shifts based on time of day (dawn, day, dusk, night) and current weather conditions (sunny, rainy, foggy, snowy, stormy).
+- ⚡ **PWA Support**: Installable Web App with Service Worker shell caching for fast loading and offline capabilities.
+- ♿ **Accessibility & Dark Mode**: Full WCAG AA color contrast compliance, keyboard shortcuts (`⌘K` for search), and `prefers-reduced-motion` support.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack & Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Build System**: [Vite](https://vitejs.dev/) + TypeScript
+- **Framework**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + Custom Glassmorphism Tokens
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Data Caching & Server State**: [TanStack Query v5](https://tanstack.com/query)
+- **Map & Radar**: [Leaflet](https://leafletjs.com/) + [RainViewer API](https://www.rainviewer.com/api.html)
+- **Weather & AQI Data**: [Open-Meteo API](https://open-meteo.com/) (Free, open-source, no API key required)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+- **Unit Testing**: [Vitest](https://vitest.dev/) + React Testing Library
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js 18.x or higher
+- npm 9.x or higher
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation & Local Setup
 
-### `npm run eject`
+```bash
+# Clone repository
+git clone https://github.com/gouthamgujjari/weather.git
+cd weather
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start local development server
+npm run dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open `http://localhost:5173` in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧪 Testing & Building for Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Run unit test suite
+npm run test
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Type-check and build Vite production bundle
+npm run build
 
-### Code Splitting
+# Preview production build locally
+npm run preview
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🌐 Deployment (Vercel)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is configured out-of-the-box for instant Vercel deployment.
 
-### Making a Progressive Web App
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📜 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License © 2026 Goutham Gujjari
